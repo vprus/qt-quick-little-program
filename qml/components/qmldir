@@ -1,0 +1,8 @@
+
+module Components
+
+singleton CustomStyle 1.0 CustomStyle.qml
+
+CustomLabel 1.0 CustomLabel.qml
+CustomHeader 1.0 CustomHeader.qml
+CustomLink 1.0 CustomLink.qml

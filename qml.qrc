@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/qml">
+        <file alias="View.qml">qml/view.qml</file>
+    </qresource>
+    <qresource prefix="/qml/Components">
+        <file alias="qmldir">qml/components/qmldir</file>
+        <file alias="CustomStyle.qml">qml/components/CustomStyle.qml</file>
+        <file alias="CustomLabel.qml">qml/components/CustomLabel.qml</file>
+        <file alias="CustomHeader.qml">qml/components/CustomHeader.qml</file>
+        <file alias="CustomLink.qml">qml/components/CustomLink.qml</file>
+        <file alias="fontawesome-webfont.ttf">qml/components/fontawesome-webfont.ttf</file>
+    </qresource>
+</RCC>
