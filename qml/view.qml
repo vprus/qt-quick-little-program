@@ -9,6 +9,10 @@ Rectangle {
     height: 12 * 2 + 18 * CustomStyle.rhythm
     color: Qt.rgba(0, 255, 0, 0)
 
+    objectName: "theRectangle"
+
+    property var style: CustomStyle
+
     ColumnLayout {
 
         anchors.left: parent.left
@@ -24,6 +28,7 @@ Rectangle {
         }
 
         CustomLabel {
+            objectName: "theLabel"
             id: label1
             text: "This little program demostrates creating custom components in Qt Quick as well as common style defiitions and a baseline grid."
             wrapMode: Text.WordWrap

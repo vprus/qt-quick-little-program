@@ -19,6 +19,8 @@ import QtQuick.Controls.Private 1.0
 // See https://wiki.qt.io/Qml_Styling for background
 Item {
 
+    objectName: "theStyle"
+
     FontLoader {
         source: "fontawesome-webfont.ttf"
     }
@@ -41,12 +43,18 @@ Item {
         font.pointSize: 16.5
     }
 
+    Item {
+        id: innerStyle
+        objectName: "innerStyle"
+        property color headerColor: "#337ab7"
+    }
+
     property font headerFont: headerFontMetrics.font
 
     property int rhythm: normalFontSpacing * normalFont.pixelSize
 
     property color normalColor: "#333333"
-    property color headerColor: "#337ab7"
+    property color headerColor: innerStyle.headerColor
 
     property color linkColor: "#337ab7"
     property color linkColorDisabled: "#999ba4"
