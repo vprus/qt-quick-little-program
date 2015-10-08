@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.4
 import QtQuick.Controls 1.2
 import QtQuick.Layouts 1.1
 
@@ -10,6 +10,8 @@ Rectangle {
     color: Qt.rgba(0, 255, 0, 0)
 
     ColumnLayout {
+
+        id: layout
 
         anchors.left: parent.left
         anchors.top: parent.top
@@ -79,6 +81,29 @@ Rectangle {
             width: parent.width
             color: "#eeeeee"
         }
+    }
+
+    ShaderEffect {
+        anchors.fill: layout
+
+        vertexShader: "
+            attribute highp vec4 qt_Vertex;
+            attribute vec2 qt_MultiTexCoord0;
+            uniform highp mat4 qt_Matrix;
+            varying highp vec4 color;
+            void main() {
+                color = vec4(qt_MultiTexCoord0.x, 1.0 - qt_MultiTexCoord0.x, qt_MultiTexCoord0.y, 0.5);
+
+                gl_Position = qt_Matrix * qt_Vertex;
+            }
+        "
+
+        fragmentShader: "
+            varying highp vec4 color;
+            void main() {
+                gl_FragColor = color;
+            }
+        ";
     }
 
 
